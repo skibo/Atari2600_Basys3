@@ -1,0 +1,53 @@
+
+Atari2600_Basys3
+------------
+November, 2025
+
+An Atari 2600 (VCS) in an Artix-7 FPGA.
+
+This is the source code for a Xilinx Vivado project targeting a Digilent
+Basys3 FPGA evaluation board.  This project originally targeted an Arty.
+
+After cloning this repository, start Vivado and go to the TCL console and
+type "cd <path-to-repository>" to move to the top directory of this repository.
+Then type "source project.tcl".  Vivado will create a project within the
+repository under the directory "Atari2600_Basys3".  The project source code
+will remain outside the project in the "src" directory so it can be under
+source control.
+
+At this point, you should be able to generate the bitstream from within
+Vivado by clicking "Generate Bitstream" under the "Program and Debug" section
+of the Project Manager.
+
+Once the bitstream is generated, you should be able to use the Hardware
+Manager to open the target and program the device with the bitstream.
+
+This project uses a PS2 keyboard to control the joysticks and the Start
+and Select switches.
+
+PS/2 keyboard:
+
+	UP Arrow -	UP, Joystick Left
+	DOWN Arrow -	DOWN,
+	LEFT Arrow -	LEFT,
+	RIGHT Arrow -	RIGHT
+	SPACE - 	Left Trigger
+
+	T -		UP, Joystick Right
+	G -		DOWN,
+	F -		LEFT,
+	H -		RIGHT
+	A -		Right Trigger
+
+	ENTER - 	Start switch
+	TAB - 		Select switch
+
+Basys3 Switches:
+
+	SW 0 -		Expert Left (Novice when off)
+	SW 1 -		Expert Right (Novice when off)
+	SW 2 -		Color / Black & White (Color when off)
+
+--Thomas Skibo
+ThomasSkibo@yahoo.com
+
