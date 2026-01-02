@@ -25,7 +25,7 @@ endif
 VIVADO=$(XILINX_VIVADO)/bin/vivado
 XSDB=$(XILINX_VIVADO)/bin/xsdb
 
-.PHONY: default project bitstream program
+.PHONY: default project bitstream program mmi clean
 
 default: project
 
@@ -58,3 +58,6 @@ program:
 mmi:
 	$(VIVADO) -mode batch -source $(SCRIPTDIR)/write_mmi.tcl \
 		-tclargs $(PROJECT_FILE)
+
+clean:
+	$(RM) -fr $(PROJNM) vivado*.jou vivado*.log
