@@ -26,7 +26,7 @@
 
 module test_Atari2600_Basys3;
 
-    reg [7:0]   SW;
+    reg [2:0]   SW;
     wire [3:0]  VGA_R;
     wire [3:0]  VGA_G;
     wire [3:0]  VGA_B;
@@ -38,7 +38,7 @@ module test_Atari2600_Basys3;
 
 
     initial begin
-        SW = 8'd0;
+        SW = 3'd0;
         PS2_CLK = 1;
         PS2_DATA = 1;
         CLK = 0;
