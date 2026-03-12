@@ -90,8 +90,10 @@ proc protocmd {mmi_filename} {
 
     puts $fileout "#!/bin/sh\n#"
     puts $fileout "# Run this script to update bistream with updated firmware.\n"
+    puts $fileout "memfile=$bootrom_data\n"
+    puts $fileout "if \[ \$# -gt 0 ] ; then\n   memfile=\$1\nfi\n"
     puts $fileout "updatemem --force \\\n   --meminfo $mmi_filename \\"
-    puts $fileout "   --data $bootrom_data \\\n   --bit $bit_file \\"
+    puts $fileout "   --data \$memfile \\\n   --bit $bit_file \\"
     puts $fileout "   -proc atari \\\n   --out $bit_file"
 
     close $fileout
